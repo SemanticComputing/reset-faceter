@@ -1,0 +1,50 @@
+<div class="row">
+  <div id="pagination-buttons" class="col-sm-7">
+    <!-- Pagination -->
+    <ul uib-pagination
+      class="pagination"
+      max-size="5"
+      boundary-links="true"
+      rotate="false"
+      total-items="vm.totalCount"
+      ng-model="vm.pageNo"
+      ng-disabled="vm.isLoadingResults"
+      ng-change="vm.getPage()">
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+          <thead>
+            <tr>
+              <th>Yhteyden kuvaus</th>
+              <th>Henkilö</th>
+	      <th>Paikka</th>
+	      <th>Lähde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="relation in vm.page">
+              <td style="width:40%">
+                <p>
+                  {{ relation.description }}
+                </p>
+              </td>
+	      <td>
+                <p> 
+                <a ng-href="{{ relation.person.bio }}">{{ relation.person.name }}</a> </p>
+              </td>
+	      <td>
+                <p> 
+                <a ng-href="{{ relation.place.match }}">{{ relation.place.label }}</a> </p>
+              </td>
+              <td>
+                <p> 
+                <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+
+  <div id="title-row" class="row">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h1>Yhteyshaku</h1>
+          <p>Hae henkilöiden ja paikkojen välisiä yhteyksiä.</p>
+        </div>
+      <h2></h2>
+
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-4">
+	<seco-hierarchy-facet data-options="vm.facets.relationTypeHierarchy"></seco-hierarchy-facet>
+	<p>Yhteyden henkilö-subjektin ominaisuudet</p>
+        <seco-slider-facet data-options="vm.facets.date"></seco-slider-facet>
+        <seco-basic-facet data-options="vm.facets.name"></seco-basic-facet>
+	<!--<seco-hierarchy-facet data-options="vm.facets.title"></seco-hierarchy-facet>-->
+	<p>Yhteyden paikka-objektin ominaisuudet</p>
+	<seco-basic-facet data-options="vm.facets.placeName"></seco-basic-facet>
+        <seco-hierarchy-facet data-options="vm.facets.placeHierarchy"></seco-hierarchy-facet>
+	<!--<seco-basic-facet data-options="vm.facets.relationType"></seco-basic-facet>-->
+      </div>
+
+    <!-- Results column -->
+    <div class="col-md-8">
+
+      <div uib-alert class="alert-danger" ng-if="vm.error">
+        <p>{{ Error occurred }}:</p>
+        <p>{{ vm.error }}</p>
+      </div>
+
+      <img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
+
+      <div id="result-options-row" class="row">
+        <div class="col-md-12">
+          <ui-view><ui-view>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
