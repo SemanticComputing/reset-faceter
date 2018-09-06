@@ -190,6 +190,7 @@ The following dataset properties are specific to stacked bar charts.
 
 # Horizontal Bar Chart
 A horizontal bar chart is a variation on a vertical bar chart. It is sometimes used to show trend data, and the comparison of multiple data sets side by side.
+```
 {% chartjs %}
 {
     "type": "horizontalBar",
@@ -231,7 +232,7 @@ A horizontal bar chart is a variation on a vertical bar chart. It is sometimes u
     }
 }
 {% endchartjs %}
-
+```
 ## Example
 ```javascript
 var myBarChart = new Chart(ctx, {
