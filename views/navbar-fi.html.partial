@@ -9,7 +9,7 @@
 			 <span class="icon-bar"></span>
 			 <span class="icon-bar"></span>
 		    </button>
-			<a class="navbar-brand" href="/" target="_self" style="padding:0px 0px 3px 0px">
+			<a class="navbar-brand" href="/nbf/#!/portal" target="_self" style="padding:0px 0px 3px 0px">
 				<span>
 				<img width="100" height="50" src="images/agricola.jpg">
 				</span>
@@ -22,16 +22,18 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="perspectives">Näkymät<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="https://semanticcomputing.github.io/nbf/#!/ruudukko" target="_self" id="events">Hae ja selaa</a></li>
-            <li><a href="https://semanticcomputing.github.io/nbf/#!/joukkokartta" target="_self" id="persons">Kartat</a></li>
-            <li><a href="https://semanticcomputing.github.io/nbf/#!/visu" target="_self" id="troops">Tilastot</a></li>
-            <li><a href="http://www.ldf.fi/img/under-construction.gif" target="_self" id="troops">Verkostoanalyysi</a></li>
-            <li><a href="http://www.ldf.fi/img/under-construction.gif" target="_self" id="troops">Yhteyshaku</a></li>
-            <li><a href="https://semanticcomputing.github.io/nbf/#!/nlp" target="_self" id="places">Kielianalyysi</a></li>
+            <li><a href="https://semanticcomputing.github.io/nbf/#!/ruudukko" target="_self" id="events"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Hae ja selaa</a></li>
+            <li><a href="https://semanticcomputing.github.io/nbf/#!/joukkokartta" target="_self" id="persons"><span class="glyphicon glyphicon glyphicon-globe" aria-hidden="true"></span>  Kartat</a></li>
+            <li><a href="https://semanticcomputing.github.io/nbf/#!/visu" target="_self" id="troops"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Tilastot</a></li>
+            <li><a href="http://www.ldf.fi/img/under-construction.gif" target="_self" id="troops"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Verkostoanalyysi</a></li>
+            <li><a href="http://www.ldf.fi/img/under-construction.gif" target="_self" id="troops"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Yhteyshaku</a></li>
+            <li><a href="https://semanticcomputing.github.io/nbf/#!/nlp" target="_self" id="places"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Kielianalyysi</a></li>
           </ul>
         </li>
+
+<!--
         <li><a><span class='glyphicon glyphicon-globe' aria-hidden='true'></span> Suomeksi</a></li>
-        <li><a onclick = "alert('English not upported yet')"><span class='glyphicon glyphicon-globe' aria-hidden='true'></span> In English</a></li>
+        <li><a onclick = "alert('English not upported yet')"><span class='glyphicon glyphicon-globe' aria-hidden='true'></span> In English</a></li> -->
 			</ul>
 		<!--	<div id="subnav"></div> -->
 		
