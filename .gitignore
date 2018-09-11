@@ -1,2 +1,3 @@
 *.swp
 node_packages
+bower_components/chart.js/docs/
