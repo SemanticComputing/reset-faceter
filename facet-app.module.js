@@ -13,9 +13,9 @@
     //.constant('google', google)
     .constant('_', _) // eslint-disable-line no-undef
 
-    //.value('SPARQL_ENDPOINT_URL', 'https://ldf.fi/sualt-fha-finds/sparql')
-    //.value('SPARQL_ENDPOINT_URL', 'https://ldf.fi/nbf/sparql')
     .value('SPARQL_ENDPOINT_URL', 'https://ldf.fi/relse/sparql')
+    //.value('SPARQL_ENDPOINT_URL', 'http://localhost:3042/ds/sparql')
+
 
     .run(function ($rootScope, $state, $stateParams) {
       $rootScope.$state = $state;
