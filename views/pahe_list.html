@@ -3,10 +3,12 @@
     <table class="table">
           <thead>
             <tr>
-              <th>Yhteyden kuvaus</th>
-              <th>Henkilö</th>
-	      <th>Paikka</th>
-	      <th>Lähde</th>
+              <th><a uib-popover-template="'views/descriptionHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden kuvaus</a></th>
+              <th><a uib-popover-template="'views/personHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Henkilö</a></th>
+	      <th><a uib-popover-template="'views/placeHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Paikka</a></th>
+	      <th><a uib-popover-template="'views/sourceHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Lähde</a></th>
+	      <th><a uib-popover-template="'views/sourceHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden tyyppi</a></th>
+
             </tr>
           </thead>
           <tbody>
@@ -27,6 +29,9 @@
               <td>
                 <p> 
                 <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>
+              </td>
+              <td>
+                <p> {{ relation.typeLabel }} </p>
               </td>
             </tr>
           </tbody>
