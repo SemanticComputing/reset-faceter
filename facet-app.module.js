@@ -14,7 +14,7 @@
     .constant('_', _) // eslint-disable-line no-undef
 
     .value('SPARQL_ENDPOINT_URL', 'https://ldf.fi/relse/sparql')
-    //.value('SPARQL_ENDPOINT_URL', 'http://localhost:3042/ds/sparql')
+    //.value('SPARQL_ENDPOINT_URL', 'http://localhost:3030/ds/sparql')
 
 
     .run(function ($rootScope, $state, $stateParams) {
