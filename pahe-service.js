@@ -147,7 +147,7 @@
         '   ?id rel:personSubject ?person . ' +
 	'   ?person__id owl:sameAs ?person . ' +
 	'   ?person__id skos:prefLabel ?person__name . ' +
-	'   ?person__id schema:relatedLink ?person__bio . ' +  // this limits the results to those people with link to bio in nbf
+	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +

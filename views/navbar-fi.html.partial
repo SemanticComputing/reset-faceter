@@ -38,7 +38,7 @@
 		<!--	<div id="subnav"></div> -->
 		
 		<ul class="nav navbar-nav navbar-right">
-
+<!--
 		<li><a href="palaute.html" target="_self">Palaute</a></li>
 
         <li class="dropdown">
@@ -50,7 +50,7 @@
             <li><a href="https://seco.cs.aalto.fi/projects/sotasampo#yhteystiedot">Yhteystiedot TODO</a></li>
             <li><a href="https://www.facebook.com/groups/sotasampo/"><img src="/images/FB-f-Logo__blue_29.png" /> Facebook-ryhmä TODO</a></li>
           </ul>
-        </li>
+        </li> -->
 				<li><a data-toggle="modal" data-target="#myModal" href="#">Ohje</a></li>
 			</ul>
 		</div>
