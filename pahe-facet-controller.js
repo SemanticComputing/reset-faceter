@@ -12,7 +12,7 @@
     .controller('PaheFacetController', PaheFacetController);
 
     /* @ngInject */
-    function PaheFacetController($scope, FacetHandler, paheService, facetUrlStateHandlerService) {
+    function PaheFacetController($scope, $state, FacetHandler, paheService, facetUrlStateHandlerService) {
         var vm = this;
         vm.disableFacets = disableFacets;
 
@@ -20,6 +20,8 @@
         vm.facets = paheService.getFacets();
         // Initialize the facet handler
         vm.handler = new FacetHandler(getFacetOptions());
+
+	vm.removeFacetSelections = removeFacetSelections;
 
         // Disable the facets while reusults are being retrieved.
         function disableFacets() {
@@ -35,6 +37,11 @@
             options.initialState = facetUrlStateHandlerService.getFacetValuesFromUrlParams();
             return options;
         }
+
+        function removeFacetSelections() {
+            //$state.reload();
+	    $state.transitionTo($state.current, {}, { reload: true, inherit: false, notify: false });
+	}
 
     }
 })();
