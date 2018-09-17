@@ -161,6 +161,7 @@
 	'   OPTIONAL { ' + 
 	'   ?id rel:relationType ?type . ' +
 	'   ?type skos:prefLabel ?typeLabel . ' +
+	'   BIND (str(?typeLabel) AS ?typeName) . ' +
 	'   }   ' +
         ' } ' ;
 
