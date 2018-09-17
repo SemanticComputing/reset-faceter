@@ -110,7 +110,7 @@
             rdfClass: rdfClass, // optional
             usePost: true,
             preferredLang : 'fi', // required
-	    constraint: '?id skos:prefLabel ?description . ', // optional
+	    constraint: '?id <http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?name . ',
         };
 
         var prefixes =
@@ -189,7 +189,7 @@
             // you can also give getResults another parameter that is the sort
             // order of the results (as a valid SPARQL ORDER BY sequence, e.g. "?id").
             // The results are sorted by URI (?id) by default.
-            return resultHandler.getResults(facetSelections, '?description').then(function(pager) {
+            return resultHandler.getResults(facetSelections, '?name').then(function(pager) {
                 // We'll also query for the total number of results, and load the
                 // first page of results.
                 return pager.getTotalCount().then(function(count) {
