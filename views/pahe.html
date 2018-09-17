@@ -25,7 +25,7 @@
 				<p>Yhteyshaussa haetaan yhteyksiä paikkojen ja henkilöiden välillä.  Haettavat henkilöt ovat Semanttisen kansallisbiografian henkilöt ja paikat vastaavat YSO-paikat paikkakäsitteistöä.</p>
  
 
-				<p>Rajaamalla vasemmalla olevista faseteista henkilön, paikan ja yhteyden tyypin ominaisuuksia voit toivottavasti löytää mielenkiintoisia yhteyksiä henkilöiden ja 					paikkojen välillä. Yhteydestä näytetään yhteyden sanallinen kuvaus, sekä linkkejä henkilön elämänkertaan, paikan kuvaukseen ja ja lähteeseen jonka perusteella yhteys on 					luotu. Yhteydet on luotu automaattisesti, joten ne voivat sisältää virheitä. Tarkastelemalla lähteen omaa nettisivua voi arvioida onko yhteys syntynyt automaattisesti 					oikein, sekä mahdollisesti lähteen yleisempää luotettavuutta ja laajempaa kontekstia.</p>
+				<p>Rajaamalla vasemmalla olevista faseteista henkilön, paikan ja yhteyden tyypin ominaisuuksia voit toivottavasti löytää mielenkiintoisia yhteyksiä henkilöiden ja 					paikkojen välillä. Yhteydestä näytetään yhteyden sanallinen kuvaus, sekä linkkejä henkilön elämänkertaan, paikan kuvaukseen ja ja lähteeseen jonka perusteella yhteys on 					luotu. Yhteydet on luotu automaattisesti, joten ne voivat sisältää virheitä. Tarkastelemalla lähteen omaa nettisivua voi arvioida onko yhteys syntynyt automaattisesti 					oikein, sekä mahdollisesti lähteen yleisempää luotettavuutta ja laajempaa kontekstia. Osa yhteyksistä on myös tarkoituksella jätetty pois. Esimerkiksi yhteydet jotka kuvaavat vain Suomea yleisesti on jätetty pois liian epämääräisinä tässä kontekstissa.</p>
 
 				<p>Osa faseteista on hierarkisia, jolloin ylemmän hierarkiatason valinta sisältää alemmat tasot. Eli hierarkisessa fasetissa esimerkiksi Ruotsi sisältää Tukholman ja Uppsalan. Hierarkiset fasetit voivat olla hitaita. Liian monimutkainen kysely voi aiheuttaa error-viestin yksittäiseen fasettiin, jos palvelussa on ruuhkaa, mutta se ei yleensä estää sovelluksen muuta toimintaa.</p>
 
@@ -52,7 +52,7 @@
         <div class="panel-body">
 		<th><a uib-popover-template="'views/placeFacetTooltipTemplate.html'" popover-trigger="'mouseenter'" popover-placement="right">Yhteyden paikan rajaaminen</a></th>
 	</div>
-	<seco-basic-facet data-options="vm.facets.placeName"></seco-basic-facet>
+	<!--<seco-basic-facet data-options="vm.facets.placeName"></seco-basic-facet>-->
         <seco-hierarchy-facet data-options="vm.facets.placeHierarchy"></seco-hierarchy-facet>
         <div class="panel-body">
 		<th><a uib-popover-template="'views/typeFacetTooltipTemplate.html'" popover-trigger="'mouseenter'" popover-placement="right">Yhteyden tyypin rajaaminen</a></th>

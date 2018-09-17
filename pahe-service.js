@@ -65,11 +65,11 @@
             placeHierarchy: {
                 facetId: 'placeHierarchy',
                 predicate: '<http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#exactMatch>   ',
-                enabled: false,
+                enabled: true,
 		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
                 depth: 6,
 		chart: false,
-                name: 'Paikka hierarkisesti',
+                name: 'Paikka',
             },
             placeName: {
                 facetId: 'placeName',
@@ -109,8 +109,8 @@
             endpointUrl: endpointUrl, // required
             rdfClass: rdfClass, // optional
             usePost: true,
-            // constraint: constraint, // optional
-            preferredLang : 'fi' // required
+            preferredLang : 'fi', // required
+	    constraint: '?id skos:prefLabel ?description . ', // optional
         };
 
         var prefixes =
@@ -127,7 +127,7 @@
 
 
         var queryTemplate =
-        ' SELECT DISTINCT * WHERE {' +
+        ' SELECT DISTINCT * WHERE { ' +
         '  <RESULT_SET> ' +
 	'   OPTIONAL { ' + 
         '   ?id skos:prefLabel ?description . ' +
@@ -162,7 +162,7 @@
 	'   ?id rel:relationType ?type . ' +
 	'   ?type skos:prefLabel ?typeLabel . ' +
 	'   }   ' +
-        ' }' ;
+        ' } ' ;
 
         var resultOptions = {
             prefixes: prefixes, // required if the queryTemplate uses prefixes
@@ -189,7 +189,7 @@
             // you can also give getResults another parameter that is the sort
             // order of the results (as a valid SPARQL ORDER BY sequence, e.g. "?id").
             // The results are sorted by URI (?id) by default.
-            return resultHandler.getResults(facetSelections).then(function(pager) {
+            return resultHandler.getResults(facetSelections, '?description').then(function(pager) {
                 // We'll also query for the total number of results, and load the
                 // first page of results.
                 return pager.getTotalCount().then(function(count) {
