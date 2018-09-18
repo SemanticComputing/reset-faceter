@@ -58,6 +58,7 @@
 			</p>
 		</span>
               </td>
+
 	      <td>
                 <p> 
                 <a ng-href="{{ relation.person.bio }}">{{ relation.person.name }}</a> </p>
@@ -70,8 +71,48 @@
                 <p> 
                 <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>
               </td>
+
               <td>
-                <p> {{ relation.typeLabel }} </p>
+		<span ng-if="relation.typeName === 'Kuollut paikassa'">
+			<p>
+				<a style=color:red> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Syntynyt paikassa'">
+			<p>
+				<a style=color:green> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Ura tai opiskelu liittyy paikkaan'">
+			<p>
+				<a style=color:black> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kunnianosoitus liittyy paikkaan'">
+			<p>
+				<a style=color:DarkGoldenRod> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Historiallinen tapahtuma paikassa'">
+			<p>
+				<a style=color:DarkSlateGray> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
+			<p>
+				<a style=color:DeepPink> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
+			<p>
+				<a style=color:BlueViolet> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
+			<p>
+				<a style=color:DarkMagenta> {{ relation.typeLabel }} </a>
+			</p>
+		</span>
               </td>
             </tr>
           </tbody>

@@ -54,15 +54,23 @@
             },
             title: {
                 facetId: 'title',
-                //	/<http://www.w3.org/2004/02/skos/core#prefLabel>
                 predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://xmlns.com/foaf/0.1/focus>/^<http://ldf.fi/schema/bioc/inheres_in>/<http://ldf.fi/nbf/has_title>    ',
                 name: 'Arvo, ammatti tai toiminta',
-                hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
-                depth: 3,
+                //hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
+                //depth: 3,
                 chart: true,
                 enabled: false
-	    },  // /<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel>
-            placeHierarchy: {
+	    },  // /<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel>prefix nbf:   <http://ldf.fi/nbf/>
+	    /*placeHierarchy: {
+                facetId: 'placeHierarchy',
+                predicate: '<http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#exactMatch>/^<http://ldf.fi/nbf/yso>',
+                enabled: true,
+		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
+                depth: 6,
+		chart: false,
+                name: 'Paikka',
+	    },*/
+	    placeHierarchy: {
                 facetId: 'placeHierarchy',
                 predicate: '<http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#exactMatch>   ',
                 enabled: true,
