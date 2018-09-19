@@ -10,7 +10,6 @@
 <p></p>
 
 <!--<a href="/" target="_self">Tyhjennä valinnat</a>-->
-<a href="" ng-click="vm.removeFacetSelections()">Poista kaikki valinnat</a>
 
 </div>
 <div id="helpModal" class="modal fade" role="dialog">
@@ -44,22 +43,23 @@
 
     <div class="row">
       <div class="col-md-3">
-        <div class="panel-body">
+	<a href="" ng-click="vm.removeFacetSelections()">  Poista kaikki valinnat</a>
+        <!--<div class="panel-body">
 		<th><a uib-popover-template="'views/personFacetTooltipTemplate.html'" popover-trigger="'mouseenter'" popover-placement="right">Rajaa henkilön perusteella</a></th>
-	</div>
+	</div>-->
         <!--<seco-slider-facet data-options="vm.facets.date"></seco-slider-facet>-->
         <seco-basic-facet data-options="vm.facets.name"></seco-basic-facet>
-	<seco-hierarchy-facet data-options="vm.facets.title"></seco-hierarchy-facet>
-        <div class="panel-body">
+	<seco-basic-facet data-options="vm.facets.title"></seco-basic-facet>
+        <!--<div class="panel-body">
 		<th><a uib-popover-template="'views/placeFacetTooltipTemplate.html'" popover-trigger="'mouseenter'" popover-placement="right">Rajaa paikan perusteella</a></th>
-	</div>
+	</div>-->
 	<!--<seco-basic-facet data-options="vm.facets.placeName"></seco-basic-facet>-->
         <seco-hierarchy-facet data-options="vm.facets.placeHierarchy"></seco-hierarchy-facet>
-        <div class="panel-body">
+        <!--<div class="panel-body">
 		<th><a uib-popover-template="'views/typeFacetTooltipTemplate.html'" popover-trigger="'mouseenter'" popover-placement="right">Rajaa tyypin perusteella</a></th>
-	</div>
-	<seco-hierarchy-facet data-options="vm.facets.relationTypeHierarchy"></seco-hierarchy-facet>
-	<!--<seco-basic-facet data-options="vm.facets.relationType"></seco-basic-facet>-->
+	</div>-->
+	<!--<seco-hierarchy-facet data-options="vm.facets.relationTypeHierarchy"></seco-hierarchy-facet>-->
+	<seco-basic-facet data-options="vm.facets.relationType"></seco-basic-facet>
       </div>
 
     <!-- Results column -->

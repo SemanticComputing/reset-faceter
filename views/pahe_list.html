@@ -3,14 +3,25 @@
     <table class="table">
           <thead>
             <tr>
-              <th><a uib-popover-template="'views/descriptionHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden kuvaus</a></th>
-<!--<span class="glyphicon glyphicon-info-sign"
-                uib-tooltip="testi">
-</span>-->
-              <th><a uib-popover-template="'views/personHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Henkilö</a></th>
+              <!--<th><a uib-popover-template="'views/descriptionHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden kuvaus</a></th>-->
+<th>Yhteyden kuvaus  <span class="glyphicon glyphicon-info-sign"
+                uib-tooltip="Yhteyden suomenkielinen kuvaus. Yhteys on tässä tietyn tyyppinen yhteys tietyn henkilön, ja tietyn paikan välillä. Saman tyyppiset yhteydet on kirjoitettu samalla värillä.">
+</span></th>
+<th>Henkilö  <span class="glyphicon glyphicon-info-sign"
+                uib-tooltip="Yhteyteen liittyvän henkilön nimi, ja linkki hänen biografiaansa.">
+</span></th>
+<th>Paikka  <span class="glyphicon glyphicon-info-sign"
+                uib-tooltip="Yhteyteen liittyvä paikka ja linkki paikan tarkempaan kuvaukseen.">
+</span></th>
+<th>Lähde  <span class="glyphicon glyphicon-info-sign"
+                uib-tooltip="Lähde josta yhteys on automaattisesti poimittu, sekä linkki lähteen web-sivulle, josta voi katsoa lisätietoa.">
+</span></th>
+<th>Yhteyden tyyppi  <span class="glyphicon glyphicon-info-sign"
+                uib-tooltip="Yhteyden tyypin kuvaus. Kuvaus on kirjoitettu yhteystyypin värillä.">
+</span></th>              <!--<th><a uib-popover-template="'views/personHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Henkilö</a></th>
 	      <th><a uib-popover-template="'views/placeHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Paikka</a></th>
 	      <th><a uib-popover-template="'views/sourceHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Lähde</a></th>
-	      <th><a uib-popover-template="'views/typeHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden tyyppi</a></th>
+	      <th><a uib-popover-template="'views/typeHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden tyyppi</a></th>-->
 
             </tr>
           </thead>
@@ -18,46 +29,39 @@
             <tr ng-repeat="relation in vm.page">
               <td style="width:40%">
 		<span ng-if="relation.typeName === 'Kuollut paikassa'">
-			<p>
-				<a style=color:red> {{ relation.description }} </a>
+			<p style=color:red> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Syntynyt paikassa'">
-			<p>
-				<a style=color:green> {{ relation.description }} </a>
+			<p style=color:green> {{ relation.description }}
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Ura tai opiskelu liittyy paikkaan'">
-			<p>
-				<a style=color:black> {{ relation.description }} </a>
+			<p style=color:black> {{ relation.description }}
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Kunnianosoitus liittyy paikkaan'">
-			<p>
-				<a style=color:DarkGoldenRod> {{ relation.description }} </a>
+			<p style=color:DarkGoldenRod> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Historiallinen tapahtuma paikassa'">
-			<p>
-				<a style=color:DarkSlateGray> {{ relation.description }} </a>
+			<p style=color:DarkSlateGray> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
-			<p>
-				<a style=color:DeepPink> {{ relation.description }} </a>
+			<p style=color:DeepPink> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
-			<p>
-				<a style=color:BlueViolet> {{ relation.description }} </a>
+			<p style=color:BlueViolet> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
-			<p>
-				<a style=color:DarkMagenta> {{ relation.description }} </a>
+			<p style=color:DarkMagenta> {{ relation.description }} 
 			</p>
 		</span>
               </td>
+
 	      <td>
                 <p> 
                 <a ng-href="{{ relation.person.bio }}">{{ relation.person.name }}</a> </p>
@@ -70,8 +74,40 @@
                 <p> 
                 <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>
               </td>
+
               <td>
-                <p> {{ relation.typeLabel }} </p>
+		<span ng-if="relation.typeName === 'Kuollut paikassa'">
+			<p style=color:red> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Syntynyt paikassa'">
+			<p style=color:green> {{ relation.typeLabel }} 
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Ura tai opiskelu liittyy paikkaan'">
+			<p style=color:black> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kunnianosoitus liittyy paikkaan'">
+			<p style=color:DarkGoldenRod> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Historiallinen tapahtuma paikassa'">
+			<p style=color:DarkSlateGray> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
+			<p style=color:DeepPink> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
+			<p style=color:BlueViolet> {{ relation.typeLabel }}
+			</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
+			<p style=color:DarkMagenta> {{ relation.typeLabel }}
+			</p>
+		</span>
               </td>
             </tr>
           </tbody>

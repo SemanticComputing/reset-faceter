@@ -1,0 +1,290 @@
+.comparison-title-setup{
+ margin:inherit; 
+ display:inline-flex;
+}
+
+.comparison-title-desc{
+ width:20%;
+}
+
+.comparison-title-space{
+ width:5%
+}
+
+.comparison-title-examples{
+ width:85%
+}
+
+.list-row {
+margin: auto;
+width: 75%;
+}
+.facet-name {
+  font-weight: bold;
+}
+
+.loading-img {
+  display: block;
+  margin: auto;
+}
+
+.link:after {
+  content:"\A";
+  white-space: pre-wrap;
+}
+
+a.no-style {
+  text-decoration: none;
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.person-image-container .name-col {
+  padding: 0px;
+}
+
+.popover {
+  max-width: 700px;
+}
+
+.person-img-col {
+  padding: 2px;
+}
+
+.person-img {
+  display: inline-block;
+}
+
+.padded-row {
+  padding-top: 10px;
+}
+
+.navbar-brand {
+  font-size: inherit;
+}
+
+.navbar-brand span {
+  padding-right: 5px;
+}
+
+.facetsidebar {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 120px;
+	bottom: 0px;
+	left: 0px;
+}
+
+
+.mapcontent, .chartcontent, .personmapcontent {
+	overflow: hidden;
+	position: absolute;
+	top: 120px;
+	right: 0px;
+}
+.mapcontent, .chartcontent {
+	bottom:0px;
+}
+.chartcontent {
+	overflow-y: auto;
+}
+
+
+
+@media (max-width: 1297px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .navbar-collapse.collapsing {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display:block !important;
+  }
+}
+
+.show-facets {
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+
+.person-panel {
+  overflow: hidden;
+
+}
+.person-panel p {
+  margin-bottom: 2px;
+}
+
+.person-profile-img img {
+  height: 250px;
+  max-width: 250px;
+  padding: 1px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.sort {
+  display: inline-block;
+  width: 140px;
+}
+
+.icon-menu a {
+  color: inherit;
+  font-size: 150%;
+  padding-right: 5px;
+}
+
+.expanded-facet .facet-wrapper {
+  min-width: 500px;
+  position: relative;
+  z-index: 9999;
+}
+
+img.logo {
+  height: 45px;
+  padding: 5px 20px 0 10px;
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
+ }
+
+img.logo:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.comparison-left {
+  border-right-style: solid;
+  border-right-color: black;
+  padding-right: 2px;
+}
+
+.comparison-right {
+  padding-left: 0px;
+}
+
+.comparison-results {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.comparison-results td {
+  word-wrap: break-word;
+}
+
+.comparison-results tr {
+  border-bottom-style: dashed;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+}
+
+.comparison-results .word {
+  width: 50%;
+}
+.comparison-results .pos_count {
+  width: 25%;
+}
+
+.comparison-results .count {
+  width: 25%;
+}
+
+.comparison-result-error {
+  margin: 10px;
+}
+
+a.active {
+  color: black;
+  text-decoration: none;
+  cursor: text;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+.eventForm label {
+	font-weight: 100;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.chartcontainer {
+	margin-top: -10px;
+	margin-bottom: -30px;
+}
+
+.piecontainer {
+	height: 500px;
+	margin-top: -10px;
+	margin-bottom: -30px;
+}
+
+iframe {
+	width: 100%;
+	min-height: 600px;
+}
+
+/* headlines 'Lahisukulaiset' etc on page person/detail.html	*/
+.relativeblock {
+	padding:15px 0 12px 0;
+}
+
+.relativeblock h3 {
+	display:inline; padding-right:8px;
+}
+
+/* info marker */
+.relativeblock span, .tooltip-info {
+	aria-hidden:true; 
+	color:#888;
+	tooltip-placement:top;
+	position: relative; 
+	top: -2px;
+}
+
+.relativeblock span:hover, .tooltip-info:hover {
+	color:#00C;
+}
+
+
