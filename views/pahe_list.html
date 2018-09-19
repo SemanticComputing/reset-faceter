@@ -14,7 +14,7 @@
                 uib-tooltip="Yhteyteen liittyvä paikka ja linkki paikan tarkempaan kuvaukseen.">
 </span></th>
 <th>Lähde  <span class="glyphicon glyphicon-info-sign"
-                uib-tooltip="Yhteyden suomenkielinen kuvaus. Yhteys on tässä tietyn tyyppinen yhteys tietyn henkilön ja tietyn paikan välillä. Saman tyyppiset yhteydet on kirjoitettu samalla värillä.">
+                uib-tooltip="Lähde josta yhteys on automaattisesti poimittu, sekä linkki lähteen web-sivulle, josta voi katsoa lisätietoa.">
 </span></th>
 <th>Yhteyden tyyppi  <span class="glyphicon glyphicon-info-sign"
                 uib-tooltip="Yhteyden tyypin kuvaus. Kuvaus on kirjoitettu yhteystyypin värillä.">
@@ -49,11 +49,11 @@
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
-			<pstyle=color:DeepPink> {{ relation.description }} 
+			<p style=color:DeepPink> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
-			<pstyle=color:BlueViolet> {{ relation.description }} 
+			<p style=color:BlueViolet> {{ relation.description }} 
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
