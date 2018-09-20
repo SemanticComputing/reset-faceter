@@ -88,14 +88,14 @@
             },
 	    relationType: {
                 facetId: 'relationType',
-                predicate: '<http://ldf.fi/relse/relationType>  ',
+                predicate: '<http://ldf.fi/relse/relationType>   ',
                 enabled: false,
                 name: 'Yhteyden tyyppi',
 		chart: true,
             },
 	    relationTypeHierarchy: {
                 facetId: 'relationTypeHierarchy',
-                predicate: '<http://ldf.fi/relse/relationType>    ',
+                predicate: '<http://ldf.fi/relse/relationType>   ',
                 enabled: false,
                 name: 'Yhteyden tyyppi',
 		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>  ',
@@ -161,7 +161,7 @@
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
 	'   ?person__id owl:sameAs ?person . ' +
-	'   ?person__id skos:prefLabel ?person__name . ' +
+	'   ?person__id skos:prefLabel ?person__name .  ' +
 	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
