@@ -13,3 +13,9 @@ built-in HTTP server:
 `python3 -m http.server`
 
 Then navigate to `http://localhost:8000`.
+
+# Docker
+
+Build: `docker build -t reset-faceter .`
+
+Run: `docker run -it --rm -p 8000:8000 --name reset-faceter reset-faceter`
