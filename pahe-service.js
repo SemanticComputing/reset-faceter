@@ -46,7 +46,7 @@
             name: {
                 facetId: 'name',
                 //predicate: '<http://www.w3.org/2002/07/owl#sameAs>/<http://ldf.fi/relsearch/personSubject>/<http://www.w3.org/2008/05/skos-xl#prefLabel>',
-		predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>     ',
+		predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>      ',
                 enabled: true,
 		chart: true,
                 name: 'Henkilö',
@@ -54,7 +54,7 @@
             },
             title: {
                 facetId: 'title',
-                predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://xmlns.com/foaf/0.1/focus>/^<http://ldf.fi/schema/bioc/inheres_in>/<http://ldf.fi/nbf/has_title>     ',
+                predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://xmlns.com/foaf/0.1/focus>/^<http://ldf.fi/schema/bioc/inheres_in>/<http://ldf.fi/nbf/has_title>      ',
                 name: 'Henkilön arvo, ammatti tai toiminta',
                 //hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
                 //depth: 3,
@@ -72,33 +72,33 @@
 	    },*/
 	    placeHierarchy: {
                 facetId: 'placeHierarchy',
-                predicate: '<http://ldf.fi/relse/placeObject>/<http://ldf.fi/relse/nbf>    ',
+                predicate: '<http://ldf.fi/relse/placeObject>/<http://ldf.fi/relse/nbf>     ',
                 enabled: true,
-		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>  ',
+		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>   ',
                 depth: 6,
 		chart: true,
                 name: 'Paikka',
             },
             placeName: {
                 facetId: 'placeName',
-                predicate: '<http://ldf.fi/relse/placeObject>    ',
+                predicate: '<http://ldf.fi/relse/placeObject>     ',
                 enabled: true,
 		chart: true,
                 name: 'Paikka',
             },
 	    relationType: {
                 facetId: 'relationType',
-                predicate: '<http://ldf.fi/relse/relationType> ',
+                predicate: '<http://ldf.fi/relse/relationType>  ',
                 enabled: false,
                 name: 'Yhteyden tyyppi',
 		chart: true,
             },
 	    relationTypeHierarchy: {
                 facetId: 'relationTypeHierarchy',
-                predicate: '<http://ldf.fi/relse/relationType>   ',
+                predicate: '<http://ldf.fi/relse/relationType>    ',
                 enabled: false,
                 name: 'Yhteyden tyyppi',
-		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
+		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>  ',
                 depth: 3,
             }
         };
@@ -176,7 +176,7 @@
 	'   OPTIONAL { ' + 
 	'   ?id rel:relationType ?type . ' +
 	'   ?type skos:prefLabel ?typeLabel . ' +
-	'   BIND (str(?typeLabel) AS ?typeName) . ' +
+	'   BIND (str(?typeLabel) AS ?typeName) .  ' +
 	'   }   ' +
         ' } ' ;
 
