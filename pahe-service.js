@@ -105,6 +105,9 @@
 
         var endpointUrl = SPARQL_ENDPOINT_URL;
 
+	var constraints =
+	' { ?id <http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?name .  ' +
+	' ?id <http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?placeName } '
         //var rdfClass = '<http://ldf.fi/nbf/PersonConcept>';
         var rdfClass = '<http://ldf.fi/relse/Relation>';
 
@@ -125,7 +128,7 @@
             rdfClass: rdfClass, // optional
             usePost: true,
             preferredLang : 'fi', // required
-	    constraint: '?id <http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?name .  ',
+	    constraint: constraints //'?id <http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?name .  ',
         };
 
         var prefixes =
@@ -138,6 +141,7 @@
 	' PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> ' +
 	' PREFIX owl: <http://www.w3.org/2002/07/owl#> ' +
 	' PREFIX schema: <http://schema.org/> ' +
+	' BASE <https://semanticcomputing.github.io/nbf/#!/> ' +
         ' PREFIX foaf: <http://xmlns.com/foaf/0.1/>';
 
 
@@ -163,6 +167,8 @@
 	'   ?person__id owl:sameAs ?person . ' +
 	'   ?person__id skos:prefLabel ?person__name .  ' +
 	'   ?person__id schema:relatedLink ?person__bio . ' +
+	'   bind(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
+	'   bind(uri(concat("https://semanticcomputing.github.io/nbf/#!/http:~2F~2Fldf.fi~2Fnbf~2F", ?personCode, "?tab=0")) AS ?person__link) ' +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +
@@ -205,7 +211,7 @@
             // you can also give getResults another parameter that is the sort
             // order of the results (as a valid SPARQL ORDER BY sequence, e.g. "?id").
             // The results are sorted by URI (?id) by default.
-            return resultHandler.getResults(facetSelections, '?name').then(function(pager) {
+            return resultHandler.getResults(facetSelections, '?name ?placeName').then(function(pager) {
                 // We'll also query for the total number of results, and load the
                 // first page of results.
                 return pager.getTotalCount().then(function(count) {
