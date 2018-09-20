@@ -88,7 +88,7 @@
             },
 	    relationType: {
                 facetId: 'relationType',
-                predicate: '<http://ldf.fi/relse/relationType>   ',
+                predicate: '<http://ldf.fi/relse/relationType>    ',
                 enabled: false,
                 name: 'Yhteyden tyyppi',
 		chart: true,
@@ -107,22 +107,10 @@
 
 	var constraints =
 	' { ?id <http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?name .  ' +
-	' ?id <http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?placeName } '
-        //var rdfClass = '<http://ldf.fi/nbf/PersonConcept>';
+	' ?id <http://ldf.fi/relse/placeObject>/<http://www.w3.org/2004/02/skos/core#prefLabel> ?placeName } ' ;
+
         var rdfClass = '<http://ldf.fi/relse/Relation>';
 
-        // The facet configuration also accept a 'constraint' option.
-        // The value should be a valid SPARQL pattern.
-        // One could restrict the results further, e.g., to writers in the
-        // science fiction genre by using the 'constraint' option:
-        //
-        // var constraint = '?id <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Science_fiction> .';
-        //
-        // Note that the variable representing a result in the constraint should be "?id".
-        //
-        // 'rdfClass' is just a shorthand constraint for '?id a <rdfClass> .'
-        // Both rdfClass and constraint are optional, but you should define at least
-        // one of them, or you might get bad results when there are no facet selections.
         var facetOptions = {
             endpointUrl: endpointUrl, // required
             rdfClass: rdfClass, // optional
@@ -149,7 +137,7 @@
         ' SELECT DISTINCT * WHERE { ' +
         '  <RESULT_SET> ' +
 	'   OPTIONAL { ' + 
-        '   ?id skos:prefLabel ?description .  ' +
+        '   ?id skos:prefLabel ?description .   ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:source ?source . ' +
@@ -199,21 +187,12 @@
           usePost: true,
         }
 
-        // FacetResultHandler is a service that queries the endpoint with
-        // the query and maps the results to objects.
         var resultHandler = new FacetResultHandler(endpointConfig, resultOptions);
 
-        // This function receives the facet selections from the controller
-        // and gets the results from DBpedia.
-        // Returns a promise.
         function getResults(facetSelections) {
-            // If there are variables used in the constraint option (see above),
-            // you can also give getResults another parameter that is the sort
-            // order of the results (as a valid SPARQL ORDER BY sequence, e.g. "?id").
-            // The results are sorted by URI (?id) by default.
+
             return resultHandler.getResults(facetSelections, '?name ?placeName').then(function(pager) {
-                // We'll also query for the total number of results, and load the
-                // first page of results.
+
                 return pager.getTotalCount().then(function(count) {
                     pager.totalCount = count;
                     return pager.getPage(0);

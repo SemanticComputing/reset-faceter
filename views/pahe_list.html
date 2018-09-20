@@ -69,6 +69,12 @@
 			<p style=color:DarkMagenta> {{ relation.description }} 
 			</p>
 		</span>
+		<span ng-if="relation.typeName === 'Kirje vastaanotettu paikasta'">
+			<p style=color:LightSlateGray  > {{ relation.description }} </p>
+		</span>
+		<span ng-if="relation.typeName === 'Kirje lähetetty paikasta'">
+			<p style=color:DimGrey > {{ relation.description }} </p>
+		</span>
               </td>
 
 	      <td>
@@ -114,8 +120,13 @@
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
-			<p style=color:DarkMagenta> {{ relation.typeLabel }}
-			</p>
+			<p style=color:DarkMagenta> {{ relation.typeLabel }}</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kirje vastaanotettu paikasta'">
+			<p style=color:LightSlateGray > {{ relation.typeLabel }}</p>
+		</span>
+		<span ng-if="relation.typeName === 'Kirje lähetetty paikasta'">
+			<p style=color:DimGrey> {{ relation.typeLabel }}</p>
 		</span>
               </td>
             </tr>
