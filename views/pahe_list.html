@@ -78,16 +78,17 @@
               </td>
 
 	      <td>
-                <p> 
-                <a ng-href="{{ relation.person.link }}">{{ relation.person.name }}</a> </p>
+                <p> <a ng-href="{{ relation.person.link }}">{{ relation.person.name }}</a> </p>
               </td>
 	      <td>
-                <p> 
-                <a ng-href="{{ relation.place.match }}">{{ relation.place.label }}</a> </p>
+                <p> <a ng-href="{{ relation.place.match }}">{{ relation.place.label }}</a> </p>
               </td>
               <td>
-                <p> 
-                <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>
+		<span ng-switch="relation.sourceName === 'Tapahtuma Semanttisessa kansallisbiografiassa'">
+			<a ng-switch-when="true" ng-href="{{ relation.person.events }}"> {{ relation.sourceName }}</a>
+                        	<a ng-switch-when="false" ng-href="{{ relation.link }}">{{ relation.sourceName }}</a>
+		</span>
+                <!--<p> <a ng-href="{{ relation.link }}">{{ relation.sourceName }}</a> </p>-->
               </td>
 
               <td>
