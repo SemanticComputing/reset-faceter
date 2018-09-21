@@ -156,8 +156,8 @@
 	'   ?person__id skos:prefLabel ?person__name .  ' +
 	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   BIND(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
-	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/http:~2F~2Fldf.fi~2Fnbf~2F", ?personCode)) AS ?person__link) ' +
-	'   BIND(uri(concat(str(?person__link), "/kartta")) AS ?person__events) ' +
+	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/henkilo/", ?personCode)) AS ?person__link) ' +
+	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) ' +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +
