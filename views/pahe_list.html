@@ -5,9 +5,10 @@
             <tr>
 
               <!--<th><a uib-popover-template="'views/descriptionHelpTooltipTemplate.html'" popover-trigger="'mouseenter'">Yhteyden kuvaus</a></th>-->
+<td></td>
 <th>Yhteyden kuvaus <span class="glyphicon glyphicon-info-sign"
-                uib-tooltip="Yhteyden suomenkielinen kuvaus. Yhteys on tässä tietyn tyyppinen yhteys tietyn henkilön, ja tietyn paikan välillä. Saman tyyppiset yhteydet on kirjoitettu samalla värillä.">
-</span></th>
+                uib-tooltip="Yhteyden suomenkielinen kuvaus. Yhteys on tässä tietyn tyyppinen yhteys tietyn henkilön, ja tietyn paikan välillä. Saman tyyppiset yhteydet on kirjoitettu samalla värillä."></span>
+</th>
 <th>Henkilö</th>
 <th>Paikka</th>
 <th>Lähde</th>
@@ -36,53 +37,79 @@
           </thead>
           <tbody>
             <tr ng-repeat="relation in vm.page">
-              <td style="width:40%">
+	      <td>
 		<span ng-if="relation.typeName === 'Kuollut paikassa'">
-			<p style=color:red> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-plus"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Syntynyt paikassa'">
-			<p style=color:green> {{ relation.description }}
-			</p>
+			<span class="glyphicon glyphicon-star"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Ura tai opiskelu liittyy paikkaan'">
-			<p style=color:black> {{ relation.description }}
-			</p>
+			<span class="glyphicon glyphicon-education"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Kunnianosoitus liittyy paikkaan'">
-			<p style=color:DarkGoldenRod> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-thumbs-up"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Historiallinen tapahtuma paikassa'">
-			<p style=color:DarkSlateGray> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-header"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
-			<p style=color:DeepPink> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-picture"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
-			<p style=color:BlueViolet> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-book"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
-			<p style=color:DarkMagenta> {{ relation.description }} 
-			</p>
+			<span class="glyphicon glyphicon-pencil"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Kirje vastaanotettu paikasta'">
-			<p style=color:LightSlateGray  > {{ relation.description }} </p>
+			<span class="glyphicon glyphicon-envelope"></span>
 		</span>
 		<span ng-if="relation.typeName === 'Kirje lähetetty paikasta'">
-			<p style=color:DimGrey > {{ relation.description }} </p>
+			<span class="glyphicon glyphicon-envelope"></span>
+		</span>
+
+               <td style="width:40%">
+		<span ng-if="relation.typeName === 'Kuollut paikassa'">
+			<span style=color:red> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Syntynyt paikassa'">
+			<span style=color:green> {{ relation.description }}</span>
+		</span>
+		<span ng-if="relation.typeName === 'Ura tai opiskelu liittyy paikkaan'">
+			<span style=color:black> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Kunnianosoitus liittyy paikkaan'">
+			<span style=color:DarkGoldenRod> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Historiallinen tapahtuma paikassa'">
+			<span style=color:DarkSlateGray> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
+			<span style=color:DeepPink> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
+			<span style=color:BlueViolet> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
+			<span style=color:DarkMagenta> {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Kirje vastaanotettu paikasta'">
+			<span style=color:LightSlateGray  > {{ relation.description }} </span>
+		</span>
+		<span ng-if="relation.typeName === 'Kirje lähetetty paikasta'">
+			<span style=color:DimGrey > {{ relation.description }} </span>
 		</span>
               </td>
 
 	      <td>
                 <p> <a ng-href="{{ relation.person.link }}">{{ relation.person.name }}</a> </p>
               </td>
+
 	      <td>
                 <p> <a ng-href="{{ relation.place.match }}">{{ relation.place.label }}</a> </p>
               </td>
+
               <td>
 		<span ng-switch="relation.sourceName === 'Tapahtuma Semanttisessa kansallisbiografiassa'">
 			<a ng-switch-when="true" ng-href="{{ relation.person.events }}"> {{ relation.sourceName }}</a>
@@ -113,12 +140,10 @@
 			</p>
 		</span>
 		<span ng-if="relation.typeName === 'Maalaus kuvaa paikkaa'">
-			<p style=color:DeepPink> {{ relation.typeLabel }}
-			</p>
+			<p style=color:DeepPink> {{ relation.typeLabel }}</p>
 		</span>
 		<span ng-if="relation.typeName === 'Romaani kuvaa paikkaa'">
-			<p style=color:BlueViolet> {{ relation.typeLabel }}
-			</p>
+			<p style=color:BlueViolet> {{ relation.typeLabel }}</p>
 		</span>
 		<span ng-if="relation.typeName === 'Kirjoitus kuvaa paikkaa'">
 			<p style=color:DarkMagenta> {{ relation.typeLabel }}</p>
