@@ -48,6 +48,10 @@
         $httpProvider.interceptors.push('authInterceptor');
     })
 
+    .config(function($locationProvider) {
+        $locationProvider.html5Mode(true);
+    })
+
     .config(function($stateProvider) {
         $stateProvider
         .state('login', {
@@ -57,11 +61,11 @@
             controllerAs: 'vm'
         })
         .state('pahe', {
-            url: '/pahe',
+            // url: '/pahe',
             abstract: true
         })
         .state('pahe.demo', {
-            url: '?facets',
+            url: '/pahe?facets',
             //url: '/finds',
             templateUrl: 'views/pahe.html',
             controller: 'PaheFacetController',
