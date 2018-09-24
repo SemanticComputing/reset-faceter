@@ -31,7 +31,7 @@
     })
 
     .config(function($urlRouterProvider){
-        $urlRouterProvider.when('/yhteyshaku', '/pahe');
+        $urlRouterProvider.when('', '/pahe');
     })
 
     .service('authInterceptor', function ($q, $state) {
@@ -61,11 +61,11 @@
             controllerAs: 'vm'
         })
         .state('pahe', {
-            // url: '/pahe',
-            abstract: true
+            url: '/pahe',
+            abstract: true,
         })
         .state('pahe.demo', {
-            url: '/pahe?facets',
+            url: '?facets',
             //url: '/finds',
             templateUrl: 'views/pahe.html',
             controller: 'PaheFacetController',
