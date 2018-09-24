@@ -89,7 +89,7 @@
 	    relationType: {
                 facetId: 'relationType',
                 predicate: '<http://ldf.fi/relse/relationType>    ',
-                enabled: false,
+                enabled: true,
                 name: 'Yhteyden tyyppi',
 		chart: true,
             },
