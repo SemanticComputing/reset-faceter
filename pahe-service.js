@@ -149,6 +149,9 @@
         '   ?id rel:placeObject ?place__id . ' +
 	'   ?place__id skos:prefLabel ?place__label . ' +
 	'   ?place__id skos:exactMatch ?place__match . ' +
+	'   ?place__id rel:nbf ?place__nbf . ' +
+	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
+	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/paikka/", ?place__placeSuffix)) AS ?place__nbfURI) ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
