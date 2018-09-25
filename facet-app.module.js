@@ -48,9 +48,9 @@
         $httpProvider.interceptors.push('authInterceptor');
     })
 
-    .config(function($locationProvider) {
-        $locationProvider.html5Mode(true);
-    })
+    // .config(function($locationProvider) {
+    //     $locationProvider.html5Mode(true);
+    // })
 
     .config(function($stateProvider) {
         $stateProvider

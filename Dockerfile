@@ -4,9 +4,9 @@ FROM node:9
 
 RUN npm install -g bower serve
 
-RUN mkdir /app && chown node:node /app
+RUN mkdir -p /app/yhteyshaku && chown node:node /app/yhteyshaku
 
-WORKDIR /app
+WORKDIR /app/yhteyshaku
 
 USER node
 
@@ -18,6 +18,8 @@ COPY styles styles/
 COPY views views/
 
 RUN bower install
+
+WORKDIR /app
 
 EXPOSE 8000
 
