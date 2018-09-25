@@ -8,15 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <a class="navbar-brand" ui-sref="nbf/#!/portal" style="padding:0px 0px 10px 0px">
-        <span>
-        	<img width="90" height="50" src="images/agricola.jpg" >
-        </span>
-      </a>
-
-
-      <!--<a class="navbar-brand" ui-sref="portal" style="padding:0px 0px 10px 0px">
+      
+      <a class="navbar-brand" href="http://biografiasampo.fi/" style="padding:0px 0px 10px 0px">
         <span>
         	<img width="90" height="50" src="images/agricola.jpg" >
         </span>
@@ -46,8 +39,8 @@
     <!--  NAVBAR CONTENT -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
 	
-      <div id="subnav"></div>
-      
+      <div ng-include="'views/subnavbar.html'"></div>
+
       <!-- 
       <ul class="nav navbar-nav">
       	<li><a><span class='glyphicon glyphicon-globe' aria-hidden='true'></span> Suomeksi</a></li>
@@ -56,21 +49,29 @@
        -->
 	  
       <ul class="nav navbar-nav navbar-right">
-
-		<li><a href="palaute.html" target="_self">Palaute</a></li>
-
+      <li>
+      	<a href="http://biografiasampo.fi/palaute"><span class ="koli-color">
+      		<span class="glyphicon glyphicon-pencil koli-color" aria-hidden="true">
+      		</span> Palaute</span></a>
+      	</li>
+	
+		
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tietoja<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class ="koli-color">
+          <span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Tietoja<span class="caret"></span></span></a>
           <ul class="dropdown-menu">
-            <li><a href="https://seco.cs.aalto.fi/projects/sotasampo#aineistot">Aineistot TODO</a></li>
-            <li><a href="https://www.ldf.fi/dataset/warsa">Datapalvelu LDF.fi TODO</a></li>
-            <li><a href="https://seco.cs.aalto.fi/projects/sotasampo/">SuomenSuku-projekti TODO</a></li>
-            <li><a href="https://seco.cs.aalto.fi/projects/sotasampo#yhteystiedot">Yhteystiedot TODO</a></li>
-            <li><a href="https://www.facebook.com/groups/sotasampo/"><img src="/images/FB-f-Logo__blue_29.png" /> Facebook-ryhmä TODO</a></li>
+            <li><a href="https://seco.cs.aalto.fi/projects/biografiasampo#aineistot">Aineistot</a></li>
+            <li><a href="https://www.ldf.fi/">Datapalvelu LDF.fi</a></li>
+            <li><a href="https://seco.cs.aalto.fi/projects/biografiasampo/">Biografiasampo-projektin kotisivu</a></li>
+            <li><a href="https://seco.cs.aalto.fi/projects/biografiasampo#yhteystiedot">Yhteystiedot</a></li>
+            <li><a href="https://www.facebook.com/groups/514385075640669/"><img src="/images/FB-f-Logo__blue_29.png" /> Facebook-ryhmä </a></li>
           </ul>
         </li>
-				<li><a data-toggle="modal" data-target="#myModal" href="#">Ohje</a></li>
-			</ul>
+		<li><a data-toggle="modal" data-target="#myModal" href="#"><span class ="koli-color">
+				<span class='glyphicon glyphicon-question-sign' aria-hidden='true'></span>
+				 Ohje</span></a></li>
+		</ul>
+		
 		</div>
 	</div>
   </div>
@@ -146,7 +147,7 @@
 				<li>Joukko-osastojen sotapäiväkirjat (26 500). Lähde: Kansallisarkisto.</li>
 				<li>Joukko-osastojen organisaatiokortit (500). Lähde: Kansallisarkisto.</li>
 				<li>Sotien tapahtumat (11 300). Lähde: Aalto/SeCo</li>
-				</ol>
+				</ol> 
 				<p>Lisäksi työssä on käytetty dataa lukuisista kirjallisuus- ja muista lähteistä.
 				</p>
 		-->
@@ -169,3 +170,4 @@
 			</div>
 		</div>
 </div>
+

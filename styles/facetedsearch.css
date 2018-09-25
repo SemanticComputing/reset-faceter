@@ -1,3 +1,8 @@
+.wordpinner{
+ position:absolute;
+ z-index:1;
+}
+
 .comparison-title-setup{
  margin:inherit; 
  display:inline-flex;
@@ -207,11 +212,18 @@ img.logo:hover {
 .comparison-results {
   width: 100%;
   table-layout: fixed;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .comparison-results td {
   word-wrap: break-word;
+  font-size: 14px;
 }
+.comparison-results th {
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
 
 .comparison-results tr {
   border-bottom-style: dashed;
@@ -221,13 +233,20 @@ img.logo:hover {
 
 .comparison-results .word {
   width: 50%;
+  text-align: left;
 }
 .comparison-results .pos_count {
   width: 25%;
+  text-align: left;
 }
 
 .comparison-results .count {
-  width: 25%;
+  width: 15%;
+  text-align: left;
+}
+
+.comparison-result-info {
+  margin-top: 40px;
 }
 
 .comparison-result-error {
@@ -287,4 +306,10 @@ iframe {
 	color:#00C;
 }
 
-
+.nbfwell {
+	background-color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 22px;
+}
