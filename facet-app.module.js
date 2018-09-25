@@ -31,7 +31,7 @@
     })
 
     .config(function($urlRouterProvider){
-        $urlRouterProvider.when('/yhteyshaku', '/pahe');
+        $urlRouterProvider.when('', '/pahe');
     })
 
     .service('authInterceptor', function ($q, $state) {
