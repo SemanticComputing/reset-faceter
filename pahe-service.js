@@ -46,7 +46,7 @@
             name: {
                 facetId: 'name',
                 //predicate: '<http://www.w3.org/2002/07/owl#sameAs>/<http://ldf.fi/relsearch/personSubject>/<http://www.w3.org/2008/05/skos-xl#prefLabel>',
-		predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>      ',
+		predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>         ',
                 enabled: true,
 		chart: true,
                 name: 'Henkilö',
@@ -54,7 +54,7 @@
             },
             title: {
                 facetId: 'title',
-                predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://xmlns.com/foaf/0.1/focus>/^<http://ldf.fi/schema/bioc/inheres_in>/<http://ldf.fi/nbf/has_title>      ',
+                predicate: '<http://ldf.fi/relse/personSubject>/^<http://www.w3.org/2002/07/owl#sameAs>/<http://xmlns.com/foaf/0.1/focus>/^<http://ldf.fi/schema/bioc/inheres_in>/<http://ldf.fi/nbf/has_title>       ',
                 name: 'Henkilön arvo, ammatti tai toiminta',
                 //hierarchy: '<http://www.w3.org/2004/02/skos/core#broader> ',
                 //depth: 3,
@@ -72,23 +72,23 @@
 	    },*/
 	    placeHierarchy: {
                 facetId: 'placeHierarchy',
-                predicate: '<http://ldf.fi/relse/placeObject>/<http://ldf.fi/relse/nbf>     ',
+                predicate: '<http://ldf.fi/relse/placeObject>/<http://ldf.fi/relse/nbf>       ',
                 enabled: true,
-		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>   ',
+		hierarchy: '<http://www.w3.org/2004/02/skos/core#broader>     ',
                 depth: 6,
 		chart: true,
                 name: 'Paikka',
             },
             placeName: {
                 facetId: 'placeName',
-                predicate: '<http://ldf.fi/relse/placeObject>     ',
+                predicate: '<http://ldf.fi/relse/placeObject>       ',
                 enabled: true,
 		chart: true,
                 name: 'Paikka',
             },
 	    relationType: {
                 facetId: 'relationType',
-                predicate: '<http://ldf.fi/relse/relationType>    ',
+                predicate: '<http://ldf.fi/relse/relationType>      ',
                 enabled: true,
                 name: 'Yhteyden tyyppi',
 		chart: true,
@@ -143,7 +143,7 @@
         '   ?id rel:source ?source . ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
-        '   ?id rel:sourceName ?sourceName . ' +
+        '   ?id rel:sourceName ?sourceName .  ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:placeObject ?place__id . ' +
@@ -151,16 +151,16 @@
 	'   ?place__id skos:exactMatch ?place__match . ' +
 	'   ?place__id rel:nbf ?place__nbf . ' +
 	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
-	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/paikka/", ?place__placeSuffix)) AS ?place__nbfURI) ' +
+	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/paikka/", ?place__placeSuffix)) AS ?place__nbfURI)  ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
-	'   ?person__id owl:sameAs ?person . ' +
+	'   ?person__id owl:sameAs ?person .  ' +
 	'   ?person__id skos:prefLabel ?person__name .  ' +
 	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   BIND(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
 	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/henkilo/", ?personCode)) AS ?person__link) ' +
-	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) ' +
+	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) '  +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +
