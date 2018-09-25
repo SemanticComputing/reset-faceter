@@ -129,7 +129,7 @@
 	' PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> ' +
 	' PREFIX owl: <http://www.w3.org/2002/07/owl#> ' +
 	' PREFIX schema: <http://schema.org/> ' +
-	' BASE <https://semanticcomputing.github.io/nbf/#!/> ' +
+	' BASE <http://biografiasampo.fi/> ' +
         ' PREFIX foaf: <http://xmlns.com/foaf/0.1/>';
 
 
@@ -151,7 +151,9 @@
 	'   ?place__id skos:exactMatch ?place__match . ' +
 	'   ?place__id rel:nbf ?place__nbf . ' +
 	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
-	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__placeSuffix)) AS ?place__nbfURI)  ' +
+	'   BIND(encode_for_uri(?place__placeSuffix) AS ?place__rawURI) . ' +
+	//'   BIND(replace(?place__rawURI, "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
+	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__rawURI)) AS ?place__nbfURI)  ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
