@@ -151,7 +151,7 @@
 	'   ?place__id skos:exactMatch ?place__match . ' +
 	'   ?place__id rel:nbf ?place__nbf . ' +
 	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
-	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/paikka/", ?place__placeSuffix)) AS ?place__nbfURI)  ' +
+	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__placeSuffix)) AS ?place__nbfURI)  ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
@@ -159,7 +159,7 @@
 	'   ?person__id skos:prefLabel ?person__name .  ' +
 	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   BIND(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
-	'   BIND(uri(concat("https://semanticcomputing.github.io/nbf/#!/henkilo/", ?personCode)) AS ?person__link) ' +
+	'   BIND(uri(concat("http://biografiasampo.fi/henkilo/", ?personCode)) AS ?person__link) ' +
 	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) '  +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
