@@ -136,10 +136,10 @@
         var queryTemplate =
         ' SELECT DISTINCT * WHERE { ' +
         '  <RESULT_SET> ' +
-	'   OPTIONAL { ' + 
+	'   OPTIONAL {  ' + 
         '   ?id skos:prefLabel ?description .   ' +
 	'   } ' +
-	'   OPTIONAL { ' + 
+	'   OPTIONAL { ' +
         '   ?id rel:source ?source . ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
@@ -149,8 +149,8 @@
         '   ?id rel:placeObject ?place__id . ' +
 	'   ?place__id skos:prefLabel ?place__label . ' +
 	'   ?place__id skos:exactMatch ?place__match . ' +
-	'   ?place__id rel:nbf ?place__nbf . ' +
-	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
+	'   ?place__id rel:nbf ?place__nbf .  ' +
+	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) .  ' +
 	'   BIND(encode_for_uri(?place__placeSuffix) AS ?place__rawURI) . ' +
 	//'   BIND(replace(?place__rawURI, "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
 	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__rawURI)) AS ?place__nbfURI)  ' +
@@ -162,7 +162,7 @@
 	'   ?person__id schema:relatedLink ?person__bio . ' +
 	'   BIND(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
 	'   BIND(uri(concat("http://biografiasampo.fi/henkilo/", ?personCode)) AS ?person__link) ' +
-	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) '  +
+	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events)  '  +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +
@@ -171,7 +171,7 @@
 	'   ?person__id schema:relatedLink ?person__bio . ' +  // this limits the results to those people with link to bio in nbf
 	'   } ' + */
 	'   OPTIONAL { ' + 
-	'   ?id rel:sourceLink ?link . ' +
+	'   ?id rel:sourceLink ?link .  ' +
 	'   }  ' +
 	'   OPTIONAL { ' + 
 	'   ?id rel:relationType ?type . ' +
