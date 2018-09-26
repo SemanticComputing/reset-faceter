@@ -137,32 +137,30 @@
         ' SELECT DISTINCT * WHERE { ' +
         '  <RESULT_SET> ' +
 	'   OPTIONAL {  ' + 
-        '   ?id skos:prefLabel ?description .   ' +
+        '   ?id skos:prefLabel ?description .    ' +
 	'   } ' +
 	'   OPTIONAL { ' +
-        '   ?id rel:source ?source . ' +
+        '   ?id rel:source ?source .  ' +
 	'   } ' +
 	'   OPTIONAL { ' + 
-        '   ?id rel:sourceName ?sourceName .  ' +
+        '   ?id rel:sourceName ?sourceNameRaw .  ' +
+	'   BIND(IF(str(?sourceNameRaw) = "Tapahtuma Semanttisessa Kansallisbiografiassa", "Tapahtuma Semanttisessa kansallisbiografiassa", str(?sourceNameRaw)) AS ?sourceName) .' +
 	'   } ' +
-	'   OPTIONAL { ' + 
-        '   ?id rel:placeObject ?place__id . ' +
-	'   ?place__id skos:prefLabel ?place__label . ' +
+        '   ?id rel:placeObject ?place__id .   ' +
+	'   ?place__id skos:prefLabel ?place__label .   ' +
 	'   ?place__id skos:exactMatch ?place__match . ' +
 	'   ?place__id rel:nbf ?place__nbf .  ' +
-	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) .  ' +
+	'   BIND(replace(str(?place__nbf), "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) .    ' +
 	'   BIND(encode_for_uri(?place__placeSuffix) AS ?place__rawURI) . ' +
-	//'   BIND(replace(?place__rawURI, "http://ldf.fi/nbf/places/", "") AS ?place__placeSuffix) . ' +
-	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__rawURI)) AS ?place__nbfURI)  ' +
-	'   } ' +
+	'   BIND(uri(concat("http://biografiasampo.fi/paikka/", ?place__rawURI)) AS ?place__nbfURI) .    ' +
 	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person . ' +
 	'   ?person__id owl:sameAs ?person .  ' +
-	'   ?person__id skos:prefLabel ?person__name .  ' +
-	'   ?person__id schema:relatedLink ?person__bio . ' +
+	'   ?person__id skos:prefLabel ?person__name .   ' +
+	'   ?person__id schema:relatedLink ?person__bio .  ' +
 	'   BIND(strafter(str(?person), "http://ldf.fi/nbf/") AS ?personCode) ' +
-	'   BIND(uri(concat("http://biografiasampo.fi/henkilo/", ?personCode)) AS ?person__link) ' +
-	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events)  '  +
+	'   BIND(uri(concat("http://biografiasampo.fi/henkilo/", ?personCode)) AS ?person__link) . ' +
+	'   BIND(uri(concat(str(?person__link), "/kartat")) AS ?person__events) . '  +
 	'   } ' +
 /*	'   OPTIONAL { ' + 
         '   ?id rel:personSubject ?person__id . ' +
@@ -175,7 +173,7 @@
 	'   }  ' +
 	'   OPTIONAL { ' + 
 	'   ?id rel:relationType ?type . ' +
-	'   ?type skos:prefLabel ?typeLabel . ' +
+	'   ?type skos:prefLabel ?typeLabel .  ' +
 	'   BIND (str(?typeLabel) AS ?typeName) .  ' +
 	'   }   ' +
         ' } ' ;
