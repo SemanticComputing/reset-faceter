@@ -69,6 +69,7 @@ if (window.location.host === 'biografiasampo.fi') {
 
 <body>
 
+
 <!--<ws-navbar></ws-navbar>-->
 
 <div ng-include="'views/navbar-fi.html'"></div>
@@ -76,6 +77,11 @@ if (window.location.host === 'biografiasampo.fi') {
 <div ui-view></div>
 
 <div id="footer"></div>
+
+
+
+
+
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/lodash/dist/lodash.min.js"></script>
@@ -106,6 +112,18 @@ if (window.location.host === 'biografiasampo.fi') {
 
 <script src="filters.js"></script>
 
+
+<script type="text/javascript">
+
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement({pageLanguage: 'fi',layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 'google_translate_element');
+
+}
+
+</script>
+
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
