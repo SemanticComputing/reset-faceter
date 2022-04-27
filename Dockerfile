@@ -2,7 +2,7 @@
 
 FROM node:9
 
-RUN npm install -g bower serve
+RUN npm install -g bower@1.8.14 serve@12.0.1
 
 RUN mkdir -p /app/yhteyshaku && chown node:node /app/yhteyshaku
 
